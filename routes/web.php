@@ -19,6 +19,6 @@ route::get('home', function(){
 
 Route::get('/products', [ProductController::class, 'index']);
 
-Route::get('/product/create', [ProductController::class, 'create']);
-
+Route::get('/products/create', [ProductController::class, 'create']);
+Route::post('/product/store', [ProductController::class, 'store']);
 route::get('/products/show/{id}', [ProductController::class, 'show']);
