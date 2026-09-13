@@ -1,22 +1,31 @@
 <?php
-
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index() {
-       $product = ['laptop', 'mouse', 'keyboard'];
+    protected $product;
+    public function __construct()
+    {
+        $this->product = ['laptop', 'mouse', 'keyboard'];
+    }
+
+    public function index()
+    {
+        $product = $this->product;
         return view('products.index', compact('product'));
     }
 
-    public function create(){
+    public function create()
+    {
         return "Buat daftar produk";
     }
 
-    public function detail($id){
-        return 'Product' . $id;
+    public function show($id)
+    {
+        return view('products.show', [
+            'id'      => $id,
+            'product' => $this->product[$id-1],
+        ]);
     }
-    
+
 }

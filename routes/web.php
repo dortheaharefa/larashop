@@ -21,4 +21,4 @@ Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/product/create', [ProductController::class, 'create']);
 
-route::get('/product/{id} ', [ProductController::class, 'detail']);
+route::get('/products/show/{id}', [ProductController::class, 'show']);
