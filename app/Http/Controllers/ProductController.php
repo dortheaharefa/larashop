@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index() {
-        return view('products.index');
+       $product = ['laptop', 'mouse', 'keyboard'];
+        return view('products.index', compact('product'));
     }
 
     public function create(){

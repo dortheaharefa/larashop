@@ -9,12 +9,22 @@
 </head>
 
 <body>
+    @php
+        $i = 1;
+    @endphp
     <h1>Daftar Produk</h1>
-    <ol>
-        <li>Laptop</li>
-        <li>Mouse</li>
-        <li>Keyboard</li>
-    </ol>
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>Nama Produk</th>
+        </tr>
+        @foreach ($product as $item)
+            <tr>
+                <td>{{ $i }}</td>
+                <td>{{ $item }}</td>
+            </tr>
+            @php $i++; @endphp
+        @endforeach
+    </table>
 </body>
-
 </html>
